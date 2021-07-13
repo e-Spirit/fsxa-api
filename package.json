@@ -65,6 +65,11 @@
       "js",
       "d.ts"
     ],
+    "automock": false,
+    "resetMocks": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ],
     "modulePathIgnorePatterns": [
       "dist"
     ],
@@ -107,7 +112,8 @@
     "@semantic-release/npm": "^7.0.5",
     "@semantic-release/release-notes-generator": "^9.0.1",
     "@types/express": "^4.17.8",
-    "@types/jest": "^23.3.2",
+    "@types/faker": "^5.5.7",
+    "@types/jest": "^26.0.24",
     "@types/lodash.get": "^4.4.6",
     "@types/lodash.set": "^4.3.6",
     "@types/node": "^10.11.0",
@@ -121,9 +127,10 @@
     "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "faker": "^5.5.3",
     "husky": "^1.0.1",
-    "jest": "^23.6.0",
-    "jest-config": "^23.6.0",
+    "jest": "^27.0.6",
+    "jest-config": "^27.0.6",
     "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^8.0.0",
     "lodash.camelcase": "^4.3.0",
@@ -138,7 +145,7 @@
     "semantic-release": "^17.3.0",
     "shelljs": "^0.8.3",
     "travis-deploy-once": "^5.0.9",
-    "ts-jest": "^23.10.2",
+    "ts-jest": "^27.0.3",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",

@@ -21,7 +21,7 @@ const {
 } = process.env
 
 const remoteApi = new FSXAApi(
-  FSXAContentMode.PREVIEW,
+  FSXAContentMode.RELEASE,
   {
     mode: 'remote', // we want to test against the 'remote' mode to ensure that it works with both modes.
     config: {
@@ -49,7 +49,7 @@ app.listen(3001, async () => {
     3
   )
   try {
-    const response = await proxyApi.fetchProjectProperties('de_DE')
+    const response = await proxyApi.fetchProjectProperties("de_DE")
     console.log(inspect(response, false, null, true))
   } catch (err) {
     console.log('ERROR', err)
