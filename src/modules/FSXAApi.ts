@@ -36,14 +36,23 @@ export enum FSXAApiErrors {
   NOT_FOUND = 'Resource could not be found'
 }
 
+/**
+ * @deprecated Please use the FSXAProxyApi or FSXARemoteApi classes.
+ */
 export class FSXAApi {
   public logger: Logger
   public mode!: FSXAContentMode
   protected params!: FSXAApiParams
   protected queryBuilder: QueryBuilder
 
+  /**
+   * @deprecated Please use the FSXAProxyApi or FSXARemoteApi classes since this class is will be removed in the next major version.
+   */
   constructor(mode: FSXAContentMode, params: FSXAApiParams, logLevel: LogLevel = LogLevel.ERROR) {
     this.logger = new Logger(logLevel)
+    this.logger.warn(
+      'Please use the FSXAProxyApi or FSXARemoteApi classes since this FSXAApi class is deprecated and will be removed in the next major version.'
+    )
     this.queryBuilder = new QueryBuilder(this.logger)
     this.setConfiguration(mode, params)
   }
@@ -163,7 +172,7 @@ export class FSXAApi {
       }
       return response.json()
     }
-
+    //----------------------------------
     const mapper = new CaaSMapper(
       this,
       locale,
