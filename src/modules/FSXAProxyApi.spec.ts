@@ -2,7 +2,7 @@ import { ComparisonQueryOperatorEnum } from './QueryBuilder'
 import { QueryBuilderQuery } from './../types'
 import('jest-fetch-mock')
 import { FSXAApiErrors, FSXAProxyRoutes } from '../enums'
-import { FSXAProxyApi } from './FSXAProxyApi'
+import FSXAProxyApi from './FSXAProxyApi'
 import Faker from 'faker'
 
 describe('FSXAProxyAPI', () => {

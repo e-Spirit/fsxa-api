@@ -41,7 +41,7 @@ interface RequestOptions extends Omit<RequestInit, 'body'> {
  * By using this class, no secrets are provided to the client.
  * @see FSXARemoteApi
  */
-export class FSXAProxyApi {
+export default class FSXAProxyApi {
   private _baseUrl: string = this.baseUrl
   private _method = 'POST'
   private _headers = {
@@ -259,7 +259,7 @@ export class FSXAProxyApi {
    * @returns
    */
   private fetch({ url, options }: { url: string; options: RequestOptions }) {
-    if (options.body && typeof options.body === 'object') {
+    if (options?.body && typeof options.body === 'object') {
       options.body = JSON.stringify(options.body)
     }
     return fetch(this.baseUrl + url, options as RequestInit)
